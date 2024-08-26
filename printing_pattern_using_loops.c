@@ -7,8 +7,10 @@ int main()
     
     int size = 2 * n - 1; 
     
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < size; i++) 
+    {
+        for (int j = 0; j < size; j++) 
+        {
             int min_dist = i < j ? i : j;
             min_dist = min_dist < size - i - 1 ? min_dist : size - i - 1;
             min_dist = min_dist < size - j - 1 ? min_dist : size - j - 1;
