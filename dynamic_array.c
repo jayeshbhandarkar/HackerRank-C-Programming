@@ -11,7 +11,9 @@ int* total_number_of_books;
  * The rows represent the shelves and the columns represent the books.
  */
 int** total_number_of_pages;
-int main() {
+
+int main() 
+{
     int total_number_of_shelves;
     scanf("%d", &total_number_of_shelves);
     
@@ -19,7 +21,8 @@ int main() {
     total_number_of_pages = (int**)malloc(total_number_of_shelves * sizeof(int*));
 
     // Initialize the arrays
-    for (int i = 0; i < total_number_of_shelves; i++) {
+    for (int i = 0; i < total_number_of_shelves; i++) 
+    {
         total_number_of_books[i] = 0;
         total_number_of_pages[i] = NULL; // Start with no books on the shelf
     }
@@ -27,11 +30,13 @@ int main() {
     int total_number_of_queries;
     scanf("%d", &total_number_of_queries);
 
-    for (int i = 0; i < total_number_of_queries; i++) {
+    for (int i = 0; i < total_number_of_queries; i++) 
+    {
         int type_of_query;
         scanf("%d", &type_of_query);
 
-        if (type_of_query == 1) {
+        if (type_of_query == 1) 
+        {
             int x, y;
             scanf("%d %d", &x, &y);
             
@@ -41,28 +46,36 @@ int main() {
             
             total_number_of_pages[x][total_number_of_books[x] - 1] = y;
 
-        } else if (type_of_query == 2) {
+        } 
+        else if (type_of_query == 2) 
+        {
             int x, y;
             scanf("%d %d", &x, &y);
             printf("%d\n", *(*(total_number_of_pages + x) + y));
-        } else {
+        } 
+        else 
+        {
             int x;
             scanf("%d", &x);
             printf("%d\n", *(total_number_of_books + x));
         }
     }
 
-    if (total_number_of_books) {
+    if (total_number_of_books) 
+    {
         free(total_number_of_books);
     }
     
-    for (int i = 0; i < total_number_of_shelves; i++) {
-        if (*(total_number_of_pages + i)) {
+    for (int i = 0; i < total_number_of_shelves; i++) 
+    {
+        if (*(total_number_of_pages + i)) 
+        {
             free(*(total_number_of_pages + i));
         }
     }
     
-    if (total_number_of_pages) {
+    if (total_number_of_pages) 
+    {
         free(total_number_of_pages);
     }
     
