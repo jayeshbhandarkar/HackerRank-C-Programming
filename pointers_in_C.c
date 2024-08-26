@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void update(int *a,int *b) {
+void update(int *a,int *b) 
+{
     // Complete this function    
     int add, sub;
          add = *a + *b;
@@ -9,7 +10,8 @@ void update(int *a,int *b) {
                         *b = sub;
 }
 
-int main() {
+int main() 
+{
     int a, b;
     int *pa = &a, *pb = &b;
     
